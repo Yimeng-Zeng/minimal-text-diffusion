@@ -10,10 +10,13 @@ import wandb
 from transformers import set_seed
 import os
 
+# append the path to the root of the project
+sys.path.append("/home/yimengz/string-models/minimal-text-diffusion")
+
 from src.utils import dist_util, logger
 from src.modeling.diffusion.resample import create_named_schedule_sampler
-from train_infer.factory_methods import create_model_and_diffusion
-from train_loop import TrainLoop
+from src.train_infer.factory_methods import create_model_and_diffusion
+from src.train_infer.train_loop import TrainLoop
 from src.utils import data_utils_sentencepiece
 from src.utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
 from src.utils.custom_tokenizer import create_tokenizer
